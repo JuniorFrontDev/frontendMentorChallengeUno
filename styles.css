@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  margin:0;
+  margin: 0;
   padding: 0;
 }
 html {
@@ -75,7 +75,7 @@ body {
 .card-componente__descripcion__estadistica__atributo {
   display: flex;
   flex-direction: column;
-  flex:1
+  flex: 1;
 }
 
 .card-componente__descripcion__estadistica__atributo__cantidad {
@@ -92,14 +92,12 @@ body {
   .card-componente__descripcion {
     flex-basis: 55%;
   }
-
 }
 
 @media only screen and (min-width: 600px) {
   .card-componente__descripcion {
     flex-basis: 50%;
   }
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -144,12 +142,11 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-  .card-componente__descripcion{
+  .card-componente__descripcion {
     padding: 5rem 5rem 0 5rem;
   }
 
-  .card-componente__descripcion__estadistica__atributo{
+  .card-componente__descripcion__estadistica__atributo {
     text-align: left;
   }
-
 }
