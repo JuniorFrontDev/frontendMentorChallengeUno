@@ -1,10 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 
-html{
-    font-size: 62.5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
 }
 body {
   background-color: hsl(233, 47%, 7%);
   font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-componente {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(244, 38%, 16%);
+  border-radius: 1.5rem;
+}
+
+.card-componente__imagen {
+  background-image: url("./images/image-header-mobile.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-color: hsl(277, 64%, 61%);
+  background-blend-mode: multiply;
+  flex-grow: 1;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.card-componente__descripcion {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem 0 2rem;
+  flex-basis: 70%;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+}
+
+.card-componente__descripcion__titulo {
+  font-weight: 700;
+  font-size: 2.9rem;
+}
+
+.card-componente__descripcion__titulo--principal {
+  color: hsl(277, 64%, 61%);
+}
+
+.card-componente__descripcion__resumen {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 2.2rem;
+  font-size: 1.7rem;
+  padding-top: 1.1rem;
+}
+
+.card-componente__descripcion__estadistica {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 1rem 0;
+}
+
+.card-componente__descripcion__estadistica__atributo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-componente__descripcion__estadistica__atributo__cantidad {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.card-componente__descripcion__estadistica__atributo__descripcion {
+  color: hsla(0, 0%, 100%, 0.6);
+  padding: 0.8rem 0;
+}
+
+/* RESPONSIVE */
+@media only screen and (min-width: 375px) {
+  .card-componente__descripcion {
+    flex-basis: 55%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card-componente__descripcion {
+    flex-basis: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-componente__descripcion {
+    flex-basis: 50%;
+  }
+
+  .card-componente__descripcion__titulo {
+    font-size: 3.4rem;
+  }
+
+  .card-componente__descripcion__resumen {
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+  }
+
+  .card-componente__descripcion__estadistica {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-componente {
+    height: 60%;
+    flex-direction: row;
+  }
+
+  .card-componente__imagen {
+    order: 2;
+    border-radius: 0 1rem 1rem 0;
+    background-image: url("./images/image-header-desktop.jpg");
+  }
+
+  .card-componente__descripcion__titulo {
+    text-align: left;
+  }
+
+  .card-componente__descripcion__resumen {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .card-componente__descripcion {
+    padding: 5rem 5rem 0 5rem;
+  }
+
+  .card-componente__descripcion__estadistica__atributo {
+    text-align: left;
+  }
 }
