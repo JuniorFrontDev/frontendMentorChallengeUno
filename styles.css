@@ -13,7 +13,7 @@ body {
   background-color: hsl(233, 47%, 7%);
   font-size: 1.5rem;
   font-family: "Inter", sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,8 @@ body {
 
 .card-componente {
   width: 90%;
-  height: 90%;
+  max-width: 112rem;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   background-color: hsl(244, 38%, 16%);
@@ -29,20 +30,29 @@ body {
 }
 
 .card-componente__imagen {
-  background-image: url("./images/image-header-mobile.jpg");
-  background-size: cover;
-  background-position: center top;
   background-color: hsl(277, 64%, 61%);
-  background-blend-mode: multiply;
-  flex-grow: 1;
   border-radius: 1.5rem 1.5rem 0 0;
+}
+.card-componente__imagen img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 75%;
+  mix-blend-mode: multiply;
+}
+.card-componente__imagen--mobile {
+  display: block;
+}
+
+.card-componente__imagen--desktop {
+  display: none;
 }
 
 .card-componente__descripcion {
   display: flex;
   flex-direction: column;
-  padding: 3rem 2rem 0 2rem;
-  flex-basis: 70%;
+  flex-grow: 1;
+  padding: 2.2rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   text-align: center;
@@ -51,7 +61,7 @@ body {
 
 .card-componente__descripcion__titulo {
   font-weight: 700;
-  font-size: 2.9rem;
+  font-size: 2.5rem;
 }
 
 .card-componente__descripcion__titulo--principal {
@@ -61,92 +71,128 @@ body {
 .card-componente__descripcion__resumen {
   color: hsla(0, 0%, 100%, 0.75);
   line-height: 2.2rem;
-  font-size: 1.7rem;
-  padding-top: 1.1rem;
+  font-size: 1.5rem;
+  padding: 1rem 0;
 }
 
 .card-componente__descripcion__estadistica {
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
   flex-grow: 1;
-  margin: 1rem 0;
 }
 
 .card-componente__descripcion__estadistica__atributo {
   display: flex;
   flex-direction: column;
+  justify-content: end;
   flex: 1;
 }
 
 .card-componente__descripcion__estadistica__atributo__cantidad {
-  font-size: 2.5rem;
   font-weight: 700;
 }
 .card-componente__descripcion__estadistica__atributo__descripcion {
   color: hsla(0, 0%, 100%, 0.6);
-  padding: 0.8rem 0;
-}
-
-/* RESPONSIVE */
-@media only screen and (min-width: 375px) {
-  .card-componente__descripcion {
-    flex-basis: 55%;
-  }
+  padding-top: 0.8rem;
 }
 
 @media only screen and (min-width: 600px) {
-  .card-componente__descripcion {
-    flex-basis: 50%;
+  .card-componente {
+    min-height: 30vh;
+    flex-direction: row;
   }
-}
-
-@media only screen and (min-width: 768px) {
-  .card-componente__descripcion {
-    flex-basis: 50%;
+  .card-componente__imagen {
+    order: 2;
+    flex-basis: 40%;
+    border-radius: 0 1rem 1rem 0;
   }
 
+  .card-componente__imagen--mobile {
+    display: none;
+  }
+
+  .card-componente__imagen--desktop {
+    display: block;
+  }
+
+  .card-componente__descripcion {
+    flex-basis: 60%;
+  }
   .card-componente__descripcion__titulo {
-    font-size: 3.4rem;
+    text-align: left;
+    font-size: 2rem;
   }
 
   .card-componente__descripcion__resumen {
-    font-size: 2.5rem;
-    line-height: 4.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
   }
 
   .card-componente__descripcion__estadistica {
+    font-size: 1.5rem;
     flex-direction: row;
-    align-items: center;
-  }
-}
-
-@media only screen and (min-width: 992px) {
-  .card-componente {
-    height: 60%;
-    flex-direction: row;
-  }
-
-  .card-componente__imagen {
-    order: 2;
-    border-radius: 0 1rem 1rem 0;
-    background-image: url("./images/image-header-desktop.jpg");
-  }
-
-  .card-componente__descripcion__titulo {
-    text-align: left;
-  }
-
-  .card-componente__descripcion__resumen {
-    text-align: left;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .card-componente__descripcion {
-    padding: 5rem 5rem 0 5rem;
+    align-items: end;
   }
 
   .card-componente__descripcion__estadistica__atributo {
     text-align: left;
   }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-componente__descripcion {
+    padding: 4rem;
+  }
+  .card-componente__descripcion__titulo {
+    font-size: 2.5rem;
+  }
+
+  .card-componente__descripcion__resumen {
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-componente {
+    width: 82%;
+    min-height: 55vh;
+  }
+
+  .card-componente__imagen {
+    flex-basis: 45%;
+  }
+
+  .card-componente__descripcion {
+    flex-basis: 55%;
+    padding: 7.5rem;
+  }
+
+  .card-componente__descripcion__titulo {
+    font-size: 3.5rem;
+  }
+
+  .card-componente__descripcion__resumen {
+    font-size: 2rem;
+    padding: 2rem 0;
+    line-height: 3rem;
+  }
+
+  .card-componente__descripcion__estadistica {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-componente__descripcion__titulo {
+    font-size: 4rem;
+  }
+
+  .card-componente__descripcion__resumen {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+
 }
