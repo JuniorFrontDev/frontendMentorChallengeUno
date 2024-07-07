@@ -10,36 +10,48 @@
       href="/images/favicon-32x32.png"
     />
     <title>Frontend Mentor | Stats preview card component</title>
+    <link rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="card-componente">
-        <div class="card-componente__imagen">
-          <img class="card-componente__imagen--mobile"src="./images/image-header-mobile.jpg" alt="imagen mobile">
-          <img class="card-componente__imagen--desktop" src="./images/image-header-desktop.jpg" alt="imagen desktop">
-        </div>
-        <div class="card-componente__descripcion">
-          <h1 class="card-componente__descripcion__titulo">
-            Get <span class="card-componente__descripcion__titulo--principal">Insights</span> that help your business grow.
-          </h1>
-          <p class="card-componente__descripcion__resumen">
-            Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.
-          </p>
-          <div class="card-componente__descripcion__estadistica">
-            <div class="card-componente__descripcion__estadistica__atributo" >
-              <div class="card-componente__descripcion__estadistica__atributo__cantidad">10k+</div>
-              <div class="card-componente__descripcion__estadistica__atributo__descripcion">COMPANIES</div>
-            </div>
-            <div class="card-componente__descripcion__estadistica__atributo" >
-              <div class="card-componente__descripcion__estadistica__atributo__cantidad">314</div>
-              <div class="card-componente__descripcion__estadistica__atributo__descripcion">TEMPLATES</div>
-            </div>
-            <div class="card-componente__descripcion__estadistica__atributo" >
-              <div class="card-componente__descripcion__estadistica__atributo__cantidad">12M+</div>
-              <div class="card-componente__descripcion__estadistica__atributo__descripcion">QUERIES</div>
-            </div>
+    <main class="card">
+      <div class="card__imagen">
+        <img
+          class="card__imagen--mobile"
+          src="./images/image-header-mobile.jpg"
+          alt="imagen mobile"
+        />
+        <img
+          class="card__imagen--desktop"
+          src="./images/image-header-desktop.jpg"
+          alt="imagen desktop"
+        />
+      </div>
+      <div class="card__informacion">
+        <h1 class="card__titulo">
+          Get
+          <span class="card__titulo--principal">Insights</span>
+          that help your business grow.
+        </h1>
+        <p class="card__resumen">
+          Discover the benefits of data analytics and make better decisions
+          regarding revenue, customer experience, and overall efficiency.
+        </p>
+        <div class="card__estadistica">
+          <div class="card__atributo">
+            <div class="card__cantidad">10k+</div>
+            <div class="card__descripcion">COMPANIES</div>
+          </div>
+          <div class="card__atributo">
+            <div class="card__cantidad">314</div>
+            <div class="card__descripcion">TEMPLATES</div>
+          </div>
+          <div class="card__atributo">
+            <div class="card__cantidad">12M+</div>
+            <div class="card__descripcion">QUERIES</div>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
   </body>
 </html>
